@@ -37,7 +37,23 @@
 | --- | --- |
 | test@example.com | password |
 
-## 4. 提出形式
+## 4. 追加機能と該当ファイル
+
+| 追加機能 | 主なファイル |
+| --- | --- |
+| コメント投稿（1対多） | `app/Models/Comment.php` / `app/Http/Controllers/CommentController.php` / `database/migrations/2026_09_11_000000_create_comments_table.php` / `resources/views/tweets/comments/` |
+| フォロー・アンフォロー（多対多） | `app/Http/Controllers/FollowController.php` / `app/Http/Controllers/ProfileController.php` / `database/migrations/2026_09_25_000000_create_follows_table.php` / `resources/views/profile/show.blade.php` |
+| キーワード検索 | `app/Models/Tweet.php`（`scopeKeyword`）/ `TweetController@search` / `resources/views/tweets/search.blade.php` |
+| マイページのタイムライン | `app/Models/Tweet.php`（`scopeTimeline`） |
+| テスト | `tests/Feature/CommentTest.php` / `tests/Feature/FollowTest.php` / `tests/Feature/TweetTest.php` |
+
+ルーティングは `routes/web.php`，サイドバーの「マイページ」「Tweet検索」は `resources/views/components/layouts/app/sidebar.blade.php` に追加．
+
+## 5. リポジトリ
+
+https://github.com/hikki-2017/Repository-name-laratter
+
+## 6. 提出形式
 
 **画面収録（必須）**
 
